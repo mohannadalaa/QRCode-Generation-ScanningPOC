@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:QRScannerPOC"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             x:Class="QRScannerPOC.MainPage">
+
+    <!--<StackLayout Spacing="10">
+        <Label FontAttributes="Bold" FontSize="Large" Text="QR Code POC"></Label>
+        <Button Text="Scan QR Code"  
+                x:Name="btnScan"  
+                Clicked="btnScan_Clicked"/>
+        <Label x:Name="txtBarcode"  
+               Text="Result Will Be shown Here"/>
+
+        <Entry Placeholder="Enter Text To Generate QR CODE" x:Name="QRCodeText"></Entry>
+        <Image x:Name="GeneratedIMG" ></Image>
+    </StackLayout>-->
+
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label FontAttributes="Bold" FontSize="Large" Text="QR Code POC"></Label>
+            <zxing:ZXingBarcodeImageView x:Name="BarcodeImageView" BarcodeFormat="QR_CODE" IsVisible="false" BarcodeValue="Foo">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcm:EncodingOptions Width="500" Height="500" />
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>
+
+            <!--<zxing:ZXingScannerView x:Name="BarcodeScanView" IsVisible="false" HeightRequest="500" WidthRequest="500"  OnScanResult="Handle_OnScanResult" />-->
+
+            <Entry x:Name="BCString" Text="" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Button Text="Generate QR Code" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Generate_Barcode" />
+
+            <Button Text="Scan QR Code DS" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Scan_QRcode_FirstWay_DS" />
+            <!--<Button Text="Scan QR Code 2nd way" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Scan_QRcode_2ndway" />-->
+
+            <Label Text="Value Will Be shown Here" HorizontalOptions="Center" VerticalOptions="Center" x:Name="resultt"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

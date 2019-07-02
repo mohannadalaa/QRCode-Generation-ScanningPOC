@@ -31,7 +31,7 @@ namespace QRScannerPOC.Droid.Services
             };
 
             var scanResult = await scanner.Scan(optionsCustom);
-            return scanResult.Text;
+            return (scanResult != null) ? scanResult.Text : string.Empty;
         }
     }
 }

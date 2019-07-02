@@ -18,8 +18,11 @@ namespace QRScannerPOC
 
         private void Generate_Barcode(object sender, EventArgs e)
         {
-            BarcodeImageView.BarcodeValue = BCString.Text;
-            BarcodeImageView.IsVisible = true;
+            if(!string.IsNullOrEmpty(BCString.Text))
+            {
+                BarcodeImageView.BarcodeValue = BCString.Text;
+                BarcodeImageView.IsVisible = true;
+            }
         }
 
         //Using Dependency Service .. Stable

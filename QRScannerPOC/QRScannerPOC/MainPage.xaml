@@ -20,7 +20,7 @@
 
     <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Label FontAttributes="Bold" FontSize="Large" Text="QR Code POC"></Label>
+            <Label FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Text="QR Code POC"></Label>
             <zxing:ZXingBarcodeImageView x:Name="BarcodeImageView" BarcodeFormat="QR_CODE" IsVisible="false" BarcodeValue="Foo">
                 <zxing:ZXingBarcodeImageView.BarcodeOptions>
                     <zxcm:EncodingOptions Width="500" Height="500" />
